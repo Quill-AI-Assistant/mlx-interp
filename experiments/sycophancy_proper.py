@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # sibling imports
 
 import json
 import time

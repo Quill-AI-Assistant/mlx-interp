@@ -9,13 +9,17 @@ Usage:
 
 import argparse
 import sys
+from pathlib import Path
 
 import mlx.core as mx
 from mlx_lm import load, generate
-import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # noqa: E402
-from mlx_interp import ActivationMonitor
-from mlx_interp.analysis import _get_2d
-from test_concept_swap import (
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from mlx_interp import ActivationMonitor  # noqa: E402
+from mlx_interp.analysis import _get_2d  # noqa: E402
+from test_concept_swap import (  # noqa: E402
     extract_concept_direction, ConceptSwapper,
     AGREE_PROMPTS, DISAGREE_PROMPTS,
 )

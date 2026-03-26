@@ -68,26 +68,34 @@ class SteeringLayer(nn.Module):
 
     def __call__(self, x, *args, **kwargs):
         out = self._layer(x, *args, **kwargs)
-        out_f = out.astype(mx.float32)
+        # Handle layers that return tuples (hidden_state, cache, ...)
+        if isinstance(out, tuple):
+            h = out[0]
+        else:
+            h = out
+        h_f = h.astype(mx.float32)
         d = self._direction
 
         # Project output onto direction
-        proj = mx.sum(out_f * d, axis=-1, keepdims=True)
+        proj = mx.sum(h_f * d, axis=-1, keepdims=True)
 
         if self._mode == "add":
-            out_f = out_f + self._alpha * d
+            h_f = h_f + self._alpha * d
         elif self._mode == "subtract":
-            out_f = out_f - self._alpha * proj * d
+            h_f = h_f - self._alpha * proj * d
         elif self._mode == "swap":
-            out_f = out_f - 2.0 * self._alpha * proj * d
+            h_f = h_f - 2.0 * self._alpha * proj * d
         elif self._mode == "cap":
             tau = self._alpha
             clamped = mx.clip(proj, -tau, tau)
-            out_f = out_f + (clamped - proj) * d
+            h_f = h_f + (clamped - proj) * d
         else:
             raise ValueError(f"Unknown steering mode: {self._mode!r}")
 
-        return out_f.astype(out.dtype)
+        result = h_f.astype(h.dtype)
+        if isinstance(out, tuple):
+            return (result,) + out[1:]
+        return result
 
 
 def apply_steering(

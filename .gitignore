@@ -1,8 +1,9 @@
 __pycache__/
 *.pyc
 .env
-*.json
-!package.json
+# Ignore JSON in root (e.g. IDE config) but allow experiment results
+/*.json
+!experiments/results/*.json
 .DS_Store
 venv/
 .venv/

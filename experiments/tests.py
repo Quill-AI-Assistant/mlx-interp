@@ -44,7 +44,7 @@ def run_all(model, tokenizer, model_id):
     global PASS, FAIL
     PASS, FAIL = 0, 0
 
-import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # noqa: E402
+    import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # noqa: E402
     from mlx_interp import ActivationMonitor, cosine_sim; from mlx_interp.capture import _MONITOR_REGISTRY
 
     inner = model.model if hasattr(model, 'model') else model

@@ -1,0 +1,4138 @@
+{
+  "green/red": {
+    "extraction": {
+      "layers": [
+        8,
+        9,
+        11
+      ],
+      "recommended_alpha": 1.5,
+      "layer_info": [
+        {
+          "cv_acc": 1.0,
+          "layer": 8,
+          "nonzero": 2304,
+          "norm": 0.246,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 9,
+          "nonzero": 2304,
+          "norm": 0.245,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 10,
+          "nonzero": 2304,
+          "norm": 0.243,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 11,
+          "nonzero": 2304,
+          "norm": 0.245,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 12,
+          "nonzero": 2304,
+          "norm": 0.244,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 13,
+          "nonzero": 2304,
+          "norm": 0.231,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 0.9956,
+          "layer": 14,
+          "nonzero": 2304,
+          "norm": 0.209,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 0.9956,
+          "layer": 15,
+          "nonzero": 2304,
+          "norm": 0.205,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 16,
+          "nonzero": 2304,
+          "norm": 0.144,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 17,
+          "nonzero": 2304,
+          "norm": 0.118,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 18,
+          "nonzero": 2304,
+          "norm": 0.116,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 19,
+          "nonzero": 2304,
+          "norm": 0.107,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 20,
+          "nonzero": 2304,
+          "norm": 0.104,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 21,
+          "nonzero": 2304,
+          "norm": 0.096,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 22,
+          "nonzero": 2304,
+          "norm": 0.089,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 23,
+          "nonzero": 2304,
+          "norm": 0.085,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 24,
+          "nonzero": 2304,
+          "norm": 0.084,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        }
+      ]
+    },
+    "test_suite": {
+      "rows": [
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Grass",
+          "question": "What is something that is green?",
+          "random": "Grass",
+          "reverse": "Apple",
+          "swapped": "Apple",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Apple",
+          "question": "What is something that is red?",
+          "random": "Apple",
+          "reverse": "Grass",
+          "swapped": "Grass",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Grass",
+          "question": "Name something green.",
+          "random": "Grass",
+          "reverse": "Tomato",
+          "swapped": "Tomato",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Apple",
+          "question": "Name something red.",
+          "random": "Apple",
+          "reverse": "Grass",
+          "swapped": "Grass",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Yes",
+          "question": "Is green the opposite of red?",
+          "random": "Yes",
+          "reverse": "No",
+          "swapped": "No",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Grass",
+          "question": "Describe something that is green.",
+          "random": "Grass",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Apple",
+          "question": "Describe something that is red.",
+          "random": "Apple",
+          "reverse": "Grass",
+          "swapped": "Grass",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Grass",
+          "question": "Complete: something very green is ___.",
+          "random": "Grass",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.8,
+          "method": "synonym_flip_b_to_a",
+          "normal": "Crimson",
+          "question": "Complete: something very red is ___.",
+          "random": "Crimson",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Black",
+          "question": "What word is the opposite of green?",
+          "random": "Black",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Blue",
+          "question": "What word is the opposite of red?",
+          "random": "Blue",
+          "reverse": "Grey",
+          "swapped": "Grey",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "In one word, green or red: which describes fire?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "In one word, green or red: which describes ice?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "If something is not green, it might be ___.",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Blue",
+          "question": "If something is not red, it might be ___.",
+          "random": "Blue",
+          "reverse": "Other",
+          "swapped": "Other",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Green",
+          "question": "What color is grass?",
+          "random": "Green",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "What color is fire truck?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is leaves in spring?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Green",
+          "question": "What color is emerald?",
+          "random": "Green",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "What color is ruby?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "What color is blood?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Green",
+          "question": "What color is lime?",
+          "random": "Green",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "What color is cherry?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "What color is stop sign?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is go signal?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is the Hulk?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "What color is Santa's suit?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "What color is tomato?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Green",
+          "question": "What color is broccoli?",
+          "random": "Green",
+          "reverse": "Purple",
+          "swapped": "Purple",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "What color is strawberry?",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is watermelon rind?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Green",
+          "question": "What color is shamrock?",
+          "random": "Green",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Blue",
+          "question": "What color is the sky?",
+          "random": "Blue",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Blue",
+          "question": "What color is ocean?",
+          "random": "Blue",
+          "reverse": "Blue",
+          "swapped": "Blue",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Yellow",
+          "question": "What color is banana?",
+          "random": "Yellow",
+          "reverse": "Yellow",
+          "swapped": "Yellow",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Proceed",
+          "question": "What does a green traffic light mean?",
+          "random": "Proceed",
+          "reverse": "Go",
+          "swapped": "Go",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Stop",
+          "question": "What does a red traffic light mean?",
+          "random": "Stop",
+          "reverse": "Go",
+          "swapped": "Go",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Go",
+          "question": "Green means ___ and red means ___.",
+          "random": "Life",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Green",
+          "question": "In finance, green means ___ and red means ___.",
+          "random": "Good",
+          "reverse": "Profit",
+          "swapped": "Profit",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Red",
+          "question": "Roses are ___.",
+          "random": "Red",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Greener",
+          "question": "The grass is always ___ on the other side.",
+          "random": "Greener",
+          "reverse": "Grass",
+          "swapped": "Grass",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Green",
+          "question": "Kermit the Frog said it's not easy being ___.",
+          "random": "Green",
+          "reverse": "Green-green-red",
+          "swapped": "Green-green-red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Four",
+          "question": "What is 2 + 2?",
+          "random": "4",
+          "reverse": "4",
+          "swapped": "4",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Mercury",
+          "question": "What planet is closest to the sun?",
+          "random": "Mercury",
+          "reverse": "Venus",
+          "swapped": "Venus",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Paris",
+          "question": "What is the capital of France?",
+          "random": "Paris",
+          "reverse": "Paris",
+          "swapped": "Paris",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Seven",
+          "question": "How many days in a week?",
+          "random": "Seven",
+          "reverse": "7",
+          "swapped": "7",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Japanese",
+          "question": "What language is spoken in Japan?",
+          "random": "Japanese",
+          "reverse": "Japanese",
+          "swapped": "Japanese",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Shakespeare",
+          "question": "Who wrote Romeo and Juliet?",
+          "random": "Shakespeare",
+          "reverse": "Shakespeare",
+          "swapped": "Shakespeare",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "100",
+          "question": "What is the boiling point of water in Celsius?",
+          "random": "100",
+          "reverse": "55",
+          "swapped": "55",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "7",
+          "question": "How many continents are there?",
+          "random": "Seven",
+          "reverse": "7",
+          "swapped": "7",
+          "type": "control"
+        }
+      ],
+      "summary": {
+        "avg_confidence": 0.655,
+        "avg_perplexity_normal": 5.79,
+        "avg_perplexity_swapped": 25.22,
+        "concept_swapped": 34,
+        "concept_total": 42,
+        "control_affected": 2,
+        "control_preservation_rate": 0.75,
+        "control_total": 8,
+        "probe_verification_score": 0.692,
+        "random_baseline_rate": 0.08,
+        "random_changed": 4,
+        "recommended_alpha": 1.5,
+        "reverse_changed": 38,
+        "reverse_swap_rate": 0.76,
+        "swap_rate": 0.81,
+        "total_questions": 50
+      }
+    }
+  },
+  "blue/yellow": {
+    "extraction": {
+      "layers": [
+        10,
+        11,
+        12
+      ],
+      "recommended_alpha": 1.5,
+      "layer_info": [
+        {
+          "cv_acc": 1.0,
+          "layer": 8,
+          "nonzero": 2304,
+          "norm": 0.221,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 9,
+          "nonzero": 2304,
+          "norm": 0.224,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 10,
+          "nonzero": 2304,
+          "norm": 0.224,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 11,
+          "nonzero": 2304,
+          "norm": 0.226,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 12,
+          "nonzero": 2304,
+          "norm": 0.226,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 13,
+          "nonzero": 2304,
+          "norm": 0.221,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 14,
+          "nonzero": 2304,
+          "norm": 0.195,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 15,
+          "nonzero": 2304,
+          "norm": 0.186,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 16,
+          "nonzero": 2304,
+          "norm": 0.146,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 17,
+          "nonzero": 2304,
+          "norm": 0.117,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 18,
+          "nonzero": 2304,
+          "norm": 0.11,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 19,
+          "nonzero": 2304,
+          "norm": 0.096,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 20,
+          "nonzero": 2304,
+          "norm": 0.096,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 21,
+          "nonzero": 2304,
+          "norm": 0.089,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 22,
+          "nonzero": 2304,
+          "norm": 0.083,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 23,
+          "nonzero": 2304,
+          "norm": 0.078,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 24,
+          "nonzero": 2304,
+          "norm": 0.076,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        }
+      ]
+    },
+    "test_suite": {
+      "rows": [
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Sky",
+          "question": "What is something that is blue?",
+          "random": "Sky",
+          "reverse": "Sun",
+          "swapped": "Sun",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Banana",
+          "question": "What is something that is yellow?",
+          "random": "Sun",
+          "reverse": "Sky",
+          "swapped": "Sky",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Sky",
+          "question": "Name something blue.",
+          "random": "Sky",
+          "reverse": "Sun",
+          "swapped": "Sun",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Banana",
+          "question": "Name something yellow.",
+          "random": "Sun",
+          "reverse": "Ocean",
+          "swapped": "Ocean",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "No",
+          "question": "Is blue the opposite of yellow?",
+          "random": "No",
+          "reverse": "Yes",
+          "swapped": "Yes",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Sky",
+          "question": "Describe something that is blue.",
+          "random": "Sky",
+          "reverse": "Sun",
+          "swapped": "Sun",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Sun",
+          "question": "Describe something that is yellow.",
+          "random": "Sun",
+          "reverse": "Ocean",
+          "swapped": "Ocean",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Azure",
+          "question": "Complete: something very blue is ___.",
+          "random": "Azure",
+          "reverse": "Luminous",
+          "swapped": "Luminous",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Banana",
+          "question": "Complete: something very yellow is ___.",
+          "random": "Banana",
+          "reverse": "Ocean",
+          "swapped": "Ocean",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Red",
+          "question": "What word is the opposite of blue?",
+          "random": "Red",
+          "reverse": "Black",
+          "swapped": "Black",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Blue",
+          "question": "What word is the opposite of yellow?",
+          "random": "Blue",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Yellow",
+          "question": "In one word, blue or yellow: which describes fire?",
+          "random": "Yellow",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Blue",
+          "question": "In one word, blue or yellow: which describes ice?",
+          "random": "Blue",
+          "reverse": "White",
+          "swapped": "White",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Red",
+          "question": "If something is not blue, it might be ___.",
+          "random": "Red",
+          "reverse": "Blue",
+          "swapped": "Blue",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Blue",
+          "question": "If something is not yellow, it might be ___.",
+          "random": "Blue",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is grass?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "What color is fire truck?",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is leaves in spring?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is emerald?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "What color is ruby?",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "What color is blood?",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Green",
+          "question": "What color is lime?",
+          "random": "Green",
+          "reverse": "Blue",
+          "swapped": "Blue",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "What color is cherry?",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "What color is stop sign?",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is go signal?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is the Hulk?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "What color is Santa's suit?",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Red",
+          "question": "What color is tomato?",
+          "random": "Red",
+          "reverse": "Blue",
+          "swapped": "Blue",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is broccoli?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "What color is strawberry?",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Green",
+          "question": "What color is watermelon rind?",
+          "random": "Green",
+          "reverse": "Blue",
+          "swapped": "Blue",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "What color is shamrock?",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Blue",
+          "question": "What color is the sky?",
+          "random": "Blue",
+          "reverse": "Gold",
+          "swapped": "Gold",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Blue",
+          "question": "What color is ocean?",
+          "random": "Blue",
+          "reverse": "Gold",
+          "swapped": "Gold",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Yellow",
+          "question": "What color is banana?",
+          "random": "Yellow",
+          "reverse": "Blue",
+          "swapped": "Blue",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Stop",
+          "question": "What does a blue traffic light mean?",
+          "random": "Stop",
+          "reverse": "Stop",
+          "swapped": "Stop",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Caution",
+          "question": "What does a yellow traffic light mean?",
+          "random": "Caution",
+          "reverse": "Stop",
+          "swapped": "Stop",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Happy",
+          "question": "Blue means ___ and yellow means ___.",
+          "random": "Green",
+          "reverse": "Gold",
+          "swapped": "Gold",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Bullish",
+          "question": "In finance, blue means ___ and yellow means ___.",
+          "random": "High",
+          "reverse": "Gold",
+          "swapped": "Gold",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Red",
+          "question": "Roses are ___.",
+          "random": "Red",
+          "reverse": "Red",
+          "swapped": "Red",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Greener",
+          "question": "The grass is always ___ on the other side.",
+          "random": "Greener",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Green",
+          "question": "Kermit the Frog said it's not easy being ___.",
+          "random": "Green",
+          "reverse": "Green",
+          "swapped": "Green",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Four",
+          "question": "What is 2 + 2?",
+          "random": "Four",
+          "reverse": "4",
+          "swapped": "4",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Mercury",
+          "question": "What planet is closest to the sun?",
+          "random": "Mercury",
+          "reverse": "Mercury",
+          "swapped": "Mercury",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Paris",
+          "question": "What is the capital of France?",
+          "random": "Paris",
+          "reverse": "Paris",
+          "swapped": "Paris",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Seven",
+          "question": "How many days in a week?",
+          "random": "Seven",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Japanese",
+          "question": "What language is spoken in Japan?",
+          "random": "Japanese",
+          "reverse": "Japanese",
+          "swapped": "Japanese",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Shakespeare",
+          "question": "Who wrote Romeo and Juliet?",
+          "random": "Shakespeare",
+          "reverse": "Shakespeare",
+          "swapped": "Shakespeare",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "100",
+          "question": "What is the boiling point of water in Celsius?",
+          "random": "100",
+          "reverse": "100",
+          "swapped": "100",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "7",
+          "question": "How many continents are there?",
+          "random": "Seven",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        }
+      ],
+      "summary": {
+        "avg_confidence": 0.548,
+        "avg_perplexity_normal": 7.69,
+        "avg_perplexity_swapped": 6.01,
+        "concept_swapped": 25,
+        "concept_total": 42,
+        "control_affected": 0,
+        "control_preservation_rate": 1.0,
+        "control_total": 8,
+        "probe_verification_score": 0.714,
+        "random_baseline_rate": 0.1,
+        "random_changed": 5,
+        "recommended_alpha": 1.5,
+        "reverse_changed": 27,
+        "reverse_swap_rate": 0.54,
+        "swap_rate": 0.595,
+        "total_questions": 50
+      }
+    }
+  },
+  "hot/cold": {
+    "extraction": {
+      "layers": [
+        8,
+        9,
+        11
+      ],
+      "recommended_alpha": 1.0,
+      "layer_info": [
+        {
+          "cv_acc": 1.0,
+          "layer": 8,
+          "nonzero": 2304,
+          "norm": 0.218,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 9,
+          "nonzero": 2304,
+          "norm": 0.22,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 10,
+          "nonzero": 2304,
+          "norm": 0.218,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 11,
+          "nonzero": 2304,
+          "norm": 0.218,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 12,
+          "nonzero": 2304,
+          "norm": 0.218,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 13,
+          "nonzero": 2304,
+          "norm": 0.208,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 14,
+          "nonzero": 2304,
+          "norm": 0.191,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 15,
+          "nonzero": 2304,
+          "norm": 0.15,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 16,
+          "nonzero": 2304,
+          "norm": 0.146,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 17,
+          "nonzero": 2304,
+          "norm": 0.139,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 18,
+          "nonzero": 2304,
+          "norm": 0.119,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 19,
+          "nonzero": 2304,
+          "norm": 0.106,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 20,
+          "nonzero": 2304,
+          "norm": 0.095,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 21,
+          "nonzero": 2304,
+          "norm": 0.085,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 22,
+          "nonzero": 2304,
+          "norm": 0.08,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 23,
+          "nonzero": 2304,
+          "norm": 0.074,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 24,
+          "nonzero": 2304,
+          "norm": 0.073,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        }
+      ]
+    },
+    "test_suite": {
+      "rows": [
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Fire",
+          "question": "What is something that is hot?",
+          "random": "Fire",
+          "reverse": "Ice",
+          "swapped": "Ice",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Ice",
+          "question": "What is something that is cold?",
+          "random": "Ice",
+          "reverse": "Fire",
+          "swapped": "Fire",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Sun",
+          "question": "Name something hot.",
+          "random": "Sun",
+          "reverse": "Air",
+          "swapped": "Air",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Snow",
+          "question": "Name something cold.",
+          "random": "Ice",
+          "reverse": "Sun",
+          "swapped": "Sun",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Yes",
+          "question": "Is hot the opposite of cold?",
+          "random": "Yes",
+          "reverse": "Yes",
+          "swapped": "Yes",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Sun",
+          "question": "Describe something that is hot.",
+          "random": "Ember",
+          "reverse": "Frost",
+          "swapped": "Frost",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Frost",
+          "question": "Describe something that is cold.",
+          "random": "Ice",
+          "reverse": "Ember",
+          "swapped": "Ember",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.8,
+          "method": "synonym_flip_a_to_b",
+          "normal": "Scorching",
+          "question": "Complete: something very hot is ___.",
+          "random": "Scorching",
+          "reverse": "Icy",
+          "swapped": "Icy",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.8,
+          "method": "synonym_flip_b_to_a",
+          "normal": "Chilly",
+          "question": "Complete: something very cold is ___.",
+          "random": "Chilly",
+          "reverse": "Scorching",
+          "swapped": "Scorching",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Cold",
+          "question": "What word is the opposite of hot?",
+          "random": "Cold",
+          "reverse": "Hot",
+          "swapped": "Hot",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Hot",
+          "question": "What word is the opposite of cold?",
+          "random": "Hot",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Hot",
+          "question": "In one word, hot or cold: which describes fire?",
+          "random": "Hot",
+          "reverse": "Hot",
+          "swapped": "Hot",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Cold",
+          "question": "In one word, hot or cold: which describes ice?",
+          "random": "Cold",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Cold",
+          "question": "If something is not hot, it might be ___.",
+          "random": "Cold",
+          "reverse": "Warm",
+          "swapped": "Warm",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.8,
+          "method": "synonym_flip_a_to_b",
+          "normal": "Warm",
+          "question": "If something is not cold, it might be ___.",
+          "random": "Warm",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Hot",
+          "question": "Is fire typically hot or cold?",
+          "random": "Hot",
+          "reverse": "Hot",
+          "swapped": "Hot",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Cold",
+          "question": "Is ice typically hot or cold?",
+          "random": "Cold",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Hot",
+          "question": "Is the sun typically hot or cold?",
+          "random": "Hot",
+          "reverse": "Hot",
+          "swapped": "Hot",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Cold",
+          "question": "Is snow typically hot or cold?",
+          "random": "Cold",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Hot",
+          "question": "Is lava typically hot or cold?",
+          "random": "Hot",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Cold",
+          "question": "Is Antarctica typically hot or cold?",
+          "random": "Cold",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Hot",
+          "question": "Is a sauna typically hot or cold?",
+          "random": "Hot",
+          "reverse": "Hot",
+          "swapped": "Hot",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Hot",
+          "question": "Is an oven typically hot or cold?",
+          "random": "Hot",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Cold",
+          "question": "Is a freezer typically hot or cold?",
+          "random": "Cold",
+          "reverse": "Cold",
+          "swapped": "Cold",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Hot",
+          "question": "Is a desert at noon typically hot or cold?",
+          "random": "Hot",
+          "reverse": "Hot",
+          "swapped": "Hot",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Four",
+          "question": "What is 2 + 2?",
+          "random": "Four",
+          "reverse": "4",
+          "swapped": "4",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Mercury",
+          "question": "What planet is closest to the sun?",
+          "random": "Mercury",
+          "reverse": "Mercury",
+          "swapped": "Mercury",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Paris",
+          "question": "What is the capital of France?",
+          "random": "Paris",
+          "reverse": "Paris",
+          "swapped": "Paris",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Seven",
+          "question": "How many days in a week?",
+          "random": "Seven",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Japanese",
+          "question": "What language is spoken in Japan?",
+          "random": "Japanese",
+          "reverse": "Japanese",
+          "swapped": "Japanese",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Shakespeare",
+          "question": "Who wrote Romeo and Juliet?",
+          "random": "Shakespeare",
+          "reverse": "Shakespeare",
+          "swapped": "Shakespeare",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "100",
+          "question": "What is the boiling point of water in Celsius?",
+          "random": "100",
+          "reverse": "100",
+          "swapped": "100",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "7",
+          "question": "How many continents are there?",
+          "random": "Seven",
+          "reverse": "7",
+          "swapped": "7",
+          "type": "control"
+        }
+      ],
+      "summary": {
+        "avg_confidence": 0.7,
+        "avg_perplexity_normal": 6.54,
+        "avg_perplexity_swapped": 10.47,
+        "concept_swapped": 14,
+        "concept_total": 25,
+        "control_affected": 0,
+        "control_preservation_rate": 1.0,
+        "control_total": 8,
+        "probe_verification_score": 0.909,
+        "random_baseline_rate": 0.121,
+        "random_changed": 4,
+        "recommended_alpha": 1.0,
+        "reverse_changed": 15,
+        "reverse_swap_rate": 0.455,
+        "swap_rate": 0.56,
+        "total_questions": 33
+      }
+    }
+  },
+  "fast/slow": {
+    "extraction": {
+      "layers": [
+        8,
+        9,
+        11
+      ],
+      "recommended_alpha": 2.0,
+      "layer_info": [
+        {
+          "cv_acc": 1.0,
+          "layer": 8,
+          "nonzero": 2304,
+          "norm": 0.238,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 9,
+          "nonzero": 2304,
+          "norm": 0.236,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 10,
+          "nonzero": 2304,
+          "norm": 0.23,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 11,
+          "nonzero": 2304,
+          "norm": 0.231,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 12,
+          "nonzero": 2304,
+          "norm": 0.231,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 13,
+          "nonzero": 2304,
+          "norm": 0.215,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 14,
+          "nonzero": 2304,
+          "norm": 0.202,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 15,
+          "nonzero": 2304,
+          "norm": 0.185,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 16,
+          "nonzero": 2304,
+          "norm": 0.161,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 17,
+          "nonzero": 2304,
+          "norm": 0.124,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 18,
+          "nonzero": 2304,
+          "norm": 0.124,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 19,
+          "nonzero": 2304,
+          "norm": 0.11,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 20,
+          "nonzero": 2304,
+          "norm": 0.103,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 21,
+          "nonzero": 2304,
+          "norm": 0.093,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 22,
+          "nonzero": 2304,
+          "norm": 0.089,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 23,
+          "nonzero": 2304,
+          "norm": 0.086,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 24,
+          "nonzero": 2304,
+          "norm": 0.083,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        }
+      ]
+    },
+    "test_suite": {
+      "rows": [
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Car",
+          "question": "What is something that is fast?",
+          "random": "Car",
+          "reverse": "Time",
+          "swapped": "Time",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Snail",
+          "question": "What is something that is slow?",
+          "random": "Snail",
+          "reverse": "Object",
+          "swapped": "Object",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Car",
+          "question": "Name something fast.",
+          "random": "Car",
+          "reverse": "Tree",
+          "swapped": "Tree",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Snail",
+          "question": "Name something slow.",
+          "random": "Snail",
+          "reverse": "Ball",
+          "swapped": "Ball",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Yes",
+          "question": "Is fast the opposite of slow?",
+          "random": "Yes",
+          "reverse": "No",
+          "swapped": "No",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Arrow",
+          "question": "Describe something that is fast.",
+          "random": "Arrow",
+          "reverse": "Stream",
+          "swapped": "Stream",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Snail",
+          "question": "Describe something that is slow.",
+          "random": "Snail",
+          "reverse": "Slow",
+          "swapped": "Slow",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Blurry",
+          "question": "Complete: something very fast is ___.",
+          "random": "Blurry",
+          "reverse": "Slowly",
+          "swapped": "Slowly",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Sluggish",
+          "question": "Complete: something very slow is ___.",
+          "random": "Sluggish",
+          "reverse": "Slow",
+          "swapped": "Slow",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Slow",
+          "question": "What word is the opposite of fast?",
+          "random": "Slow",
+          "reverse": "Opposite",
+          "swapped": "Opposite",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Fast",
+          "question": "What word is the opposite of slow?",
+          "random": "Fast",
+          "reverse": "Slow",
+          "swapped": "Slow",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Fast",
+          "question": "In one word, fast or slow: which describes fire?",
+          "random": "Fast",
+          "reverse": "Slow",
+          "swapped": "Slow",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Slow",
+          "question": "In one word, fast or slow: which describes ice?",
+          "random": "Slow",
+          "reverse": "Slow",
+          "swapped": "Slow",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Slow",
+          "question": "If something is not fast, it might be ___.",
+          "random": "Slow",
+          "reverse": "Slow",
+          "swapped": "Slow",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Fast",
+          "question": "If something is not slow, it might be ___.",
+          "random": "Fast",
+          "reverse": "Slow",
+          "swapped": "Slow",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Fast",
+          "question": "Is a cheetah typically fast or slow?",
+          "random": "Fast",
+          "reverse": "Fastpoke",
+          "swapped": "Fastpoke",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Slow",
+          "question": "Is a turtle typically fast or slow?",
+          "random": "Slow",
+          "reverse": "Fasted",
+          "swapped": "Fasted",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Slow",
+          "question": "Is a snail typically fast or slow?",
+          "random": "Slow",
+          "reverse": "Fasted",
+          "swapped": "Fasted",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Fast",
+          "question": "Is light typically fast or slow?",
+          "random": "Fast",
+          "reverse": "Fasted",
+          "swapped": "Fasted",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Fast",
+          "question": "Is a rocket typically fast or slow?",
+          "random": "Fast",
+          "reverse": "Fastpoke",
+          "swapped": "Fastpoke",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Slow",
+          "question": "Is a sloth typically fast or slow?",
+          "random": "Slow",
+          "reverse": "Fasted",
+          "swapped": "Fasted",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Fast",
+          "question": "Is a bullet typically fast or slow?",
+          "random": "Fast",
+          "reverse": "Fasted",
+          "swapped": "Fasted",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Slow",
+          "question": "Is a glacier typically fast or slow?",
+          "random": "Slow",
+          "reverse": "Fasted",
+          "swapped": "Fasted",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Four",
+          "question": "What is 2 + 2?",
+          "random": "4",
+          "reverse": "Four",
+          "swapped": "Four",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Mercury",
+          "question": "What planet is closest to the sun?",
+          "random": "Mercury",
+          "reverse": "Mercury",
+          "swapped": "Mercury",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Paris",
+          "question": "What is the capital of France?",
+          "random": "Paris",
+          "reverse": "Paris",
+          "swapped": "Paris",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Seven",
+          "question": "How many days in a week?",
+          "random": "Seven",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Japanese",
+          "question": "What language is spoken in Japan?",
+          "random": "Japanese",
+          "reverse": "Japanese",
+          "swapped": "Japanese",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Shakespeare",
+          "question": "Who wrote Romeo and Juliet?",
+          "random": "Shakespeare",
+          "reverse": "William",
+          "swapped": "William",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "100",
+          "question": "What is the boiling point of water in Celsius?",
+          "random": "100",
+          "reverse": "100",
+          "swapped": "100",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "7",
+          "question": "How many continents are there?",
+          "random": "Seven",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        }
+      ],
+      "summary": {
+        "avg_confidence": 0.565,
+        "avg_perplexity_normal": 7.11,
+        "avg_perplexity_swapped": 12.08,
+        "concept_swapped": 21,
+        "concept_total": 23,
+        "control_affected": 1,
+        "control_preservation_rate": 0.875,
+        "control_total": 8,
+        "probe_verification_score": 0.447,
+        "random_baseline_rate": 0.065,
+        "random_changed": 2,
+        "recommended_alpha": 2.0,
+        "reverse_changed": 23,
+        "reverse_swap_rate": 0.742,
+        "swap_rate": 0.913,
+        "total_questions": 31
+      }
+    }
+  },
+  "sweet/bitter": {
+    "extraction": {
+      "layers": [
+        8,
+        9,
+        10
+      ],
+      "recommended_alpha": 1.5,
+      "layer_info": [
+        {
+          "cv_acc": 1.0,
+          "layer": 8,
+          "nonzero": 2304,
+          "norm": 0.191,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 9,
+          "nonzero": 2304,
+          "norm": 0.19,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 10,
+          "nonzero": 2304,
+          "norm": 0.188,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 11,
+          "nonzero": 2304,
+          "norm": 0.188,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 12,
+          "nonzero": 2304,
+          "norm": 0.186,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 13,
+          "nonzero": 2304,
+          "norm": 0.176,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 14,
+          "nonzero": 2304,
+          "norm": 0.165,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 15,
+          "nonzero": 2304,
+          "norm": 0.148,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 16,
+          "nonzero": 2304,
+          "norm": 0.132,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 17,
+          "nonzero": 2304,
+          "norm": 0.123,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 18,
+          "nonzero": 2304,
+          "norm": 0.098,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 19,
+          "nonzero": 2304,
+          "norm": 0.094,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 20,
+          "nonzero": 2304,
+          "norm": 0.085,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 21,
+          "nonzero": 2304,
+          "norm": 0.079,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 22,
+          "nonzero": 2304,
+          "norm": 0.075,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 23,
+          "nonzero": 2304,
+          "norm": 0.071,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 24,
+          "nonzero": 2304,
+          "norm": 0.07,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        }
+      ]
+    },
+    "test_suite": {
+      "rows": [
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Candy",
+          "question": "What is something that is sweet?",
+          "random": "Candy",
+          "reverse": "Truth",
+          "swapped": "Truth",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Coffee",
+          "question": "What is something that is bitter?",
+          "random": "Coffee",
+          "reverse": "Candy",
+          "swapped": "Candy",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Candy",
+          "question": "Name something sweet.",
+          "random": "Candy",
+          "reverse": "Coal",
+          "swapped": "Coal",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Coffee",
+          "question": "Name something bitter.",
+          "random": "Coffee",
+          "reverse": "Candy",
+          "swapped": "Candy",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Yes",
+          "question": "Is sweet the opposite of bitter?",
+          "random": "Yes",
+          "reverse": "No",
+          "swapped": "No",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Candy",
+          "question": "Describe something that is sweet.",
+          "random": "Candy",
+          "reverse": "Stone",
+          "swapped": "Stone",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Coffee",
+          "question": "Describe something that is bitter.",
+          "random": "Coffee",
+          "reverse": "Candy",
+          "swapped": "Candy",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Candy",
+          "question": "Complete: something very sweet is ___.",
+          "random": "Candy",
+          "reverse": "Unpleasant",
+          "swapped": "Unpleasant",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Aspartame",
+          "question": "Complete: something very bitter is ___.",
+          "random": "Aspartame",
+          "reverse": "Delicious",
+          "swapped": "Delicious",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Bitter",
+          "question": "What word is the opposite of sweet?",
+          "random": "Bitter",
+          "reverse": "Sweet",
+          "swapped": "Sweet",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Sweet",
+          "question": "What word is the opposite of bitter?",
+          "random": "Sweet",
+          "reverse": "Sour",
+          "swapped": "Sour",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Bitter",
+          "question": "In one word, sweet or bitter: which describes fire?",
+          "random": "Bitter",
+          "reverse": "Hot",
+          "swapped": "Hot",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Sweet",
+          "question": "In one word, sweet or bitter: which describes ice?",
+          "random": "Bitter",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Bitter",
+          "question": "If something is not sweet, it might be ___.",
+          "random": "Bitter",
+          "reverse": "Sour",
+          "swapped": "Sour",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Sweet",
+          "question": "If something is not bitter, it might be ___.",
+          "random": "Sweet",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Sweet",
+          "question": "Is honey typically sweet or bitter?",
+          "random": "Sweet",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Bitter",
+          "question": "Is coffee typically sweet or bitter?",
+          "random": "Bitter",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Sweet",
+          "question": "Is sugar typically sweet or bitter?",
+          "random": "Sweet",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Bitter",
+          "question": "Is dark chocolate typically sweet or bitter?",
+          "random": "Bitter",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Tart",
+          "question": "Is lemon typically sweet or bitter?",
+          "random": "Tart",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.8,
+          "method": "synonym_flip_b_to_a",
+          "normal": "Tart",
+          "question": "Is grapefruit typically sweet or bitter?",
+          "random": "Tart",
+          "reverse": "Sweet",
+          "swapped": "Sweet",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Sweet",
+          "question": "Is maple syrup typically sweet or bitter?",
+          "random": "Sweet",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Bitter",
+          "question": "Is vinegar typically sweet or bitter?",
+          "random": "Bitter",
+          "reverse": "Bitter",
+          "swapped": "Bitter",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Four",
+          "question": "What is 2 + 2?",
+          "random": "4",
+          "reverse": "Four",
+          "swapped": "Four",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Mercury",
+          "question": "What planet is closest to the sun?",
+          "random": "Mercury",
+          "reverse": "Mercury",
+          "swapped": "Mercury",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Paris",
+          "question": "What is the capital of France?",
+          "random": "Paris",
+          "reverse": "Paris",
+          "swapped": "Paris",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Seven",
+          "question": "How many days in a week?",
+          "random": "Seven",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Japanese",
+          "question": "What language is spoken in Japan?",
+          "random": "Japanese",
+          "reverse": "Japanese",
+          "swapped": "Japanese",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Shakespeare",
+          "question": "Who wrote Romeo and Juliet?",
+          "random": "Shakespeare",
+          "reverse": "Shakespeare",
+          "swapped": "Shakespeare",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "100",
+          "question": "What is the boiling point of water in Celsius?",
+          "random": "100",
+          "reverse": "100",
+          "swapped": "100",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "7",
+          "question": "How many continents are there?",
+          "random": "7",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        }
+      ],
+      "summary": {
+        "avg_confidence": 0.596,
+        "avg_perplexity_normal": 6.88,
+        "avg_perplexity_swapped": 5.86,
+        "concept_swapped": 20,
+        "concept_total": 23,
+        "control_affected": 0,
+        "control_preservation_rate": 1.0,
+        "control_total": 8,
+        "probe_verification_score": 0.599,
+        "random_baseline_rate": 0.065,
+        "random_changed": 2,
+        "recommended_alpha": 1.5,
+        "reverse_changed": 21,
+        "reverse_swap_rate": 0.677,
+        "swap_rate": 0.87,
+        "total_questions": 31
+      }
+    }
+  },
+  "happy/sad": {
+    "extraction": {
+      "layers": [
+        8,
+        9,
+        11
+      ],
+      "recommended_alpha": 1.0,
+      "layer_info": [
+        {
+          "cv_acc": 1.0,
+          "layer": 8,
+          "nonzero": 2304,
+          "norm": 0.202,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 9,
+          "nonzero": 2304,
+          "norm": 0.195,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 10,
+          "nonzero": 2304,
+          "norm": 0.189,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 11,
+          "nonzero": 2304,
+          "norm": 0.191,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 12,
+          "nonzero": 2304,
+          "norm": 0.183,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 13,
+          "nonzero": 2304,
+          "norm": 0.172,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 14,
+          "nonzero": 2304,
+          "norm": 0.164,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 15,
+          "nonzero": 2304,
+          "norm": 0.151,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 16,
+          "nonzero": 2304,
+          "norm": 0.139,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 17,
+          "nonzero": 2304,
+          "norm": 0.117,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 18,
+          "nonzero": 2304,
+          "norm": 0.105,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 19,
+          "nonzero": 2304,
+          "norm": 0.095,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 20,
+          "nonzero": 2304,
+          "norm": 0.091,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 21,
+          "nonzero": 2304,
+          "norm": 0.085,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 22,
+          "nonzero": 2304,
+          "norm": 0.081,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 23,
+          "nonzero": 2304,
+          "norm": 0.077,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 24,
+          "nonzero": 2304,
+          "norm": 0.074,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        }
+      ]
+    },
+    "test_suite": {
+      "rows": [
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Joy",
+          "question": "What is something that is happy?",
+          "random": "Joy",
+          "reverse": "Mourning",
+          "swapped": "Mourning",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Loss",
+          "question": "What is something that is sad?",
+          "random": "Loss",
+          "reverse": "Joy",
+          "swapped": "Joy",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Sunshine",
+          "question": "Name something happy.",
+          "random": "Sunshine",
+          "reverse": "Rain",
+          "swapped": "Rain",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Loss",
+          "question": "Name something sad.",
+          "random": "Loss",
+          "reverse": "Sunshine",
+          "swapped": "Sunshine",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Yes",
+          "question": "Is happy the opposite of sad?",
+          "random": "Yes",
+          "reverse": "Yes",
+          "swapped": "Yes",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Joy",
+          "question": "Describe something that is happy.",
+          "random": "Joy",
+          "reverse": "Loneliness",
+          "swapped": "Loneliness",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Loss",
+          "question": "Describe something that is sad.",
+          "random": "Empty",
+          "reverse": "Joy",
+          "swapped": "Joy",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Jubilant",
+          "question": "Complete: something very happy is ___.",
+          "random": "Jubilant",
+          "reverse": "Despair",
+          "swapped": "Despair",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Heartbreaking",
+          "question": "Complete: something very sad is ___.",
+          "random": "Heartbreaking",
+          "reverse": "Blissful",
+          "swapped": "Blissful",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Sad",
+          "question": "What word is the opposite of happy?",
+          "random": "Sad",
+          "reverse": "Happy",
+          "swapped": "Happy",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Happy",
+          "question": "What word is the opposite of sad?",
+          "random": "Happy",
+          "reverse": "Sad",
+          "swapped": "Sad",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Happy",
+          "question": "In one word, happy or sad: which describes fire?",
+          "random": "Happy",
+          "reverse": "Sad",
+          "swapped": "Sad",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Sad",
+          "question": "In one word, happy or sad: which describes ice?",
+          "random": "Sad",
+          "reverse": "Sad",
+          "swapped": "Sad",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Sad",
+          "question": "If something is not happy, it might be ___.",
+          "random": "Sad",
+          "reverse": "Down",
+          "swapped": "Down",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Happy",
+          "question": "If something is not sad, it might be ___.",
+          "random": "Happy",
+          "reverse": "Sad",
+          "swapped": "Sad",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Happy",
+          "question": "Is a birthday party typically happy or sad?",
+          "random": "Happy",
+          "reverse": "Happy",
+          "swapped": "Happy",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Sad",
+          "question": "Is a funeral typically happy or sad?",
+          "random": "Sad",
+          "reverse": "Sad",
+          "swapped": "Sad",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Happy",
+          "question": "Is winning the lottery typically happy or sad?",
+          "random": "Happy",
+          "reverse": "Mixed",
+          "swapped": "Mixed",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Sad",
+          "question": "Is losing a game typically happy or sad?",
+          "random": "Sad",
+          "reverse": "Sad",
+          "swapped": "Sad",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Happy",
+          "question": "Is a wedding typically happy or sad?",
+          "random": "Happy",
+          "reverse": "Happy",
+          "swapped": "Happy",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Sad",
+          "question": "Is a rainy day typically happy or sad?",
+          "random": "Sad",
+          "reverse": "Sad",
+          "swapped": "Sad",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Happy",
+          "question": "Is a sunny morning typically happy or sad?",
+          "random": "Happy",
+          "reverse": "Happy",
+          "swapped": "Happy",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Sad",
+          "question": "Is getting fired typically happy or sad?",
+          "random": "Sad",
+          "reverse": "Sad",
+          "swapped": "Sad",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Four",
+          "question": "What is 2 + 2?",
+          "random": "4",
+          "reverse": "Four",
+          "swapped": "Four",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Mercury",
+          "question": "What planet is closest to the sun?",
+          "random": "Mercury",
+          "reverse": "Mercury",
+          "swapped": "Mercury",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Paris",
+          "question": "What is the capital of France?",
+          "random": "Paris",
+          "reverse": "Paris",
+          "swapped": "Paris",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Seven",
+          "question": "How many days in a week?",
+          "random": "Seven",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Japanese",
+          "question": "What language is spoken in Japan?",
+          "random": "Japanese",
+          "reverse": "Japanese",
+          "swapped": "Japanese",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Shakespeare",
+          "question": "Who wrote Romeo and Juliet?",
+          "random": "Shakespeare",
+          "reverse": "Shakespeare",
+          "swapped": "Shakespeare",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "100",
+          "question": "What is the boiling point of water in Celsius?",
+          "random": "100",
+          "reverse": "100",
+          "swapped": "100",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "7",
+          "question": "How many continents are there?",
+          "random": "7",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        }
+      ],
+      "summary": {
+        "avg_confidence": 0.635,
+        "avg_perplexity_normal": 5.52,
+        "avg_perplexity_swapped": 6.31,
+        "concept_swapped": 14,
+        "concept_total": 23,
+        "control_affected": 0,
+        "control_preservation_rate": 1.0,
+        "control_total": 8,
+        "probe_verification_score": 0.909,
+        "random_baseline_rate": 0.065,
+        "random_changed": 2,
+        "recommended_alpha": 1.0,
+        "reverse_changed": 15,
+        "reverse_swap_rate": 0.484,
+        "swap_rate": 0.609,
+        "total_questions": 31
+      }
+    }
+  },
+  "big/small": {
+    "extraction": {
+      "layers": [
+        8,
+        9,
+        11
+      ],
+      "recommended_alpha": 1.5,
+      "layer_info": [
+        {
+          "cv_acc": 1.0,
+          "layer": 8,
+          "nonzero": 2304,
+          "norm": 0.243,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 9,
+          "nonzero": 2304,
+          "norm": 0.241,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 10,
+          "nonzero": 2304,
+          "norm": 0.231,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 11,
+          "nonzero": 2304,
+          "norm": 0.232,
+          "selected": true,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 12,
+          "nonzero": 2304,
+          "norm": 0.229,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 13,
+          "nonzero": 2304,
+          "norm": 0.215,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 14,
+          "nonzero": 2304,
+          "norm": 0.205,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 15,
+          "nonzero": 2304,
+          "norm": 0.18,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 16,
+          "nonzero": 2304,
+          "norm": 0.163,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 17,
+          "nonzero": 2304,
+          "norm": 0.129,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 18,
+          "nonzero": 2304,
+          "norm": 0.127,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 19,
+          "nonzero": 2304,
+          "norm": 0.109,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 20,
+          "nonzero": 2304,
+          "norm": 0.1,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 21,
+          "nonzero": 2304,
+          "norm": 0.09,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 22,
+          "nonzero": 2304,
+          "norm": 0.087,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 23,
+          "nonzero": 2304,
+          "norm": 0.083,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        },
+        {
+          "cv_acc": 1.0,
+          "layer": 24,
+          "nonzero": 2304,
+          "norm": 0.084,
+          "selected": false,
+          "total_features": 2304,
+          "train_acc": 1.0
+        }
+      ]
+    },
+    "test_suite": {
+      "rows": [
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Mountain",
+          "question": "What is something that is big?",
+          "random": "Mountain",
+          "reverse": "Little",
+          "swapped": "Little",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Ant",
+          "question": "What is something that is small?",
+          "random": "Ant",
+          "reverse": "Universe",
+          "swapped": "Universe",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Galaxy",
+          "question": "Name something big.",
+          "random": "Galaxy",
+          "reverse": "Bee",
+          "swapped": "Bee",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Bead",
+          "question": "Name something small.",
+          "random": "Bead",
+          "reverse": "Universe",
+          "swapped": "Universe",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Yes",
+          "question": "Is big the opposite of small?",
+          "random": "Yes",
+          "reverse": "No",
+          "swapped": "No",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Mountain",
+          "question": "Describe something that is big.",
+          "random": "Mountain",
+          "reverse": "Ant",
+          "swapped": "Ant",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Bead",
+          "question": "Describe something that is small.",
+          "random": "Bead",
+          "reverse": "Galaxy",
+          "swapped": "Galaxy",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Monumental",
+          "question": "Complete: something very big is ___.",
+          "random": "Vast",
+          "reverse": "Little",
+          "swapped": "Little",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Microscopic",
+          "question": "Complete: something very small is ___.",
+          "random": "Microscopic",
+          "reverse": "Epic",
+          "swapped": "Epic",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Small",
+          "question": "What word is the opposite of big?",
+          "random": "Small",
+          "reverse": "Huge",
+          "swapped": "Huge",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.8,
+          "method": "synonym_flip_a_to_b",
+          "normal": "Large",
+          "question": "What word is the opposite of small?",
+          "random": "Large",
+          "reverse": "Little",
+          "swapped": "Little",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Big",
+          "question": "In one word, big or small: which describes fire?",
+          "random": "Big",
+          "reverse": "Fiery",
+          "swapped": "Fiery",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.5,
+          "method": "concept_removed",
+          "normal": "Small",
+          "question": "In one word, big or small: which describes ice?",
+          "random": "Small",
+          "reverse": "Ice",
+          "swapped": "Ice",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_b_to_a",
+          "normal": "Small",
+          "question": "If something is not big, it might be ___.",
+          "random": "Small",
+          "reverse": "Big",
+          "swapped": "Big",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Large",
+          "question": "If something is not small, it might be ___.",
+          "random": "Large",
+          "reverse": "Huge",
+          "swapped": "Huge",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Big",
+          "question": "Is an elephant typically big or small?",
+          "random": "Big",
+          "reverse": "Small",
+          "swapped": "Small",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Small",
+          "question": "Is an ant typically big or small?",
+          "random": "Small",
+          "reverse": "Small",
+          "swapped": "Small",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Big",
+          "question": "Is the sun typically big or small?",
+          "random": "Big",
+          "reverse": "Small",
+          "swapped": "Small",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Small",
+          "question": "Is a mouse typically big or small?",
+          "random": "Small",
+          "reverse": "Small",
+          "swapped": "Small",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Big",
+          "question": "Is a whale typically big or small?",
+          "random": "Big",
+          "reverse": "Small",
+          "swapped": "Small",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Big",
+          "question": "Is a skyscraper typically big or small?",
+          "random": "Big",
+          "reverse": "Small",
+          "swapped": "Small",
+          "type": "concept"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Small",
+          "question": "Is a grain of sand typically big or small?",
+          "random": "Small",
+          "reverse": "Small",
+          "swapped": "Small",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 1.0,
+          "method": "keyword_flip_a_to_b",
+          "normal": "Big",
+          "question": "Is Jupiter typically big or small?",
+          "random": "Big",
+          "reverse": "Small",
+          "swapped": "Small",
+          "type": "concept"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Four",
+          "question": "What is 2 + 2?",
+          "random": "4",
+          "reverse": "4",
+          "swapped": "4",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Mercury",
+          "question": "What planet is closest to the sun?",
+          "random": "Mercury",
+          "reverse": "Mercury",
+          "swapped": "Mercury",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Paris",
+          "question": "What is the capital of France?",
+          "random": "Paris",
+          "reverse": "Paris",
+          "swapped": "Paris",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Seven",
+          "question": "How many days in a week?",
+          "random": "Seven",
+          "reverse": "Seven",
+          "swapped": "Seven",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "Japanese",
+          "question": "What language is spoken in Japan?",
+          "random": "Japanese",
+          "reverse": "Japanese",
+          "swapped": "Japanese",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "Shakespeare",
+          "question": "Who wrote Romeo and Juliet?",
+          "random": "Shakespeare",
+          "reverse": "William",
+          "swapped": "William",
+          "type": "control"
+        },
+        {
+          "changed": true,
+          "confidence": 0.3,
+          "method": "text_differs_low_confidence",
+          "normal": "100",
+          "question": "What is the boiling point of water in Celsius?",
+          "random": "100",
+          "reverse": "373",
+          "swapped": "373",
+          "type": "control"
+        },
+        {
+          "changed": false,
+          "confidence": 0.8,
+          "method": "no_change_detected",
+          "normal": "7",
+          "question": "How many continents are there?",
+          "random": "7",
+          "reverse": "7",
+          "swapped": "7",
+          "type": "control"
+        }
+      ],
+      "summary": {
+        "avg_confidence": 0.596,
+        "avg_perplexity_normal": 5.68,
+        "avg_perplexity_swapped": 10.12,
+        "concept_swapped": 20,
+        "concept_total": 23,
+        "control_affected": 2,
+        "control_preservation_rate": 0.75,
+        "control_total": 8,
+        "probe_verification_score": 0.659,
+        "random_baseline_rate": 0.065,
+        "random_changed": 2,
+        "recommended_alpha": 1.5,
+        "reverse_changed": 23,
+        "reverse_swap_rate": 0.742,
+        "swap_rate": 0.87,
+        "total_questions": 31
+      }
+    }
+  }
+}

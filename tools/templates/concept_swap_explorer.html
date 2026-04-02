@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Concept Swap Explorer</title>
+    <style>
+        {{ theme_css | safe }}
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+            margin: 0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            margin-bottom: 16px;
+        }
+        .header-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+        h1 { margin: 0; font-size: 1.1em; font-weight: 600; color: var(--text); }
+        .header-subtitle {
+            font-size: 0.7em;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+        .model-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            font-size: 0.75em;
+            color: var(--text-secondary);
+        }
+        .model-row span { white-space: nowrap; }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .input-group { margin-bottom: 12px; }
+        .input-label {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            display: block;
+        }
+        .input-row {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px 10px;
+            font-size: calc(var(--font-size, 16px) * 0.75);
+            font-family: inherit;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            color: var(--text);
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+        input:focus, textarea:focus { outline: none; border-color: var(--text); }
+
+        .slider-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .slider-label {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            min-width: 100px;
+        }
+        input[type="range"] {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            background: var(--text);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .slider-value {
+            min-width: 40px;
+            font-size: 0.85em;
+            color: var(--text);
+            text-align: right;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: calc(var(--font-size, 16px) * 0.75);
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--text-secondary);
+        }
+        .btn-primary:hover { background: var(--bg-card-hover); border-color: var(--text); }
+        .btn-primary:disabled { background: transparent; border-color: var(--input-border); cursor: not-allowed; opacity: 0.6; }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--text-muted);
+        }
+        .btn-secondary:hover { background: var(--bg-card-hover); border-color: var(--text); color: var(--text); }
+        .btn-active {
+            background: var(--text);
+            color: var(--bg);
+            border: 1px solid var(--text);
+        }
+        .btn-active:hover { opacity: 0.9; background: var(--text); color: var(--bg); }
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            align-items: center;
+        }
+
+        .info-bar {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+        .info-bar strong { color: var(--text); }
+
+        /* Mode toggle */
+        .mode-toggle {
+            display: flex;
+            gap: 0;
+            margin-bottom: 12px;
+        }
+        .mode-toggle .btn {
+            border-radius: 0;
+            font-size: calc(var(--font-size, 16px) * 0.7);
+            padding: 6px 14px;
+        }
+        .mode-toggle .btn:first-child { border-radius: 4px 0 0 4px; }
+        .mode-toggle .btn:last-child { border-radius: 0 4px 4px 0; }
+
+        /* Auto-alpha checkbox */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75em;
+            color: var(--text-secondary);
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        /* Extraction results table */
+        .layer-table-wrap {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .layer-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: calc(var(--font-size, 16px) * 0.7);
+            margin-top: 10px;
+        }
+        .layer-table th, .layer-table td {
+            padding: 4px 8px;
+            border: 1px solid var(--border);
+            text-align: right;
+        }
+        .layer-table th {
+            background: var(--code-bg);
+            color: var(--text-secondary);
+            text-align: right;
+            font-weight: 600;
+        }
+        .layer-table th:first-child, .layer-table td:first-child { text-align: left; }
+        .layer-selected { background: rgba(106, 168, 147, 0.15); }
+
+        /* Chat interface */
+        .chat-input-row {
+            display: flex;
+            gap: 8px;
+        }
+        .chat-input-row textarea {
+            flex: 1;
+            min-height: 40px;
+        }
+
+        /* Side-by-side output */
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .output-col {}
+        .output-label {
+            font-size: 0.7em;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .output-box {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 12px;
+            font-size: calc(var(--font-size, 16px) * 0.8125);
+            line-height: 1.5;
+            min-height: 60px;
+            white-space: pre-wrap;
+            color: var(--text);
+        }
+        .output-normal { border-left: 3px solid var(--text-secondary); }
+        .output-swapped { border-left: 3px solid #e8825a; }
+
+        /* Summary dashboard */
+        .summary-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .summary-card {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 10px 12px;
+            text-align: center;
+        }
+        .summary-card-value {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .summary-card-label {
+            font-size: 0.65em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .summary-card-good .summary-card-value { color: #6aa893; }
+        .summary-card-warn .summary-card-value { color: #e8825a; }
+        .summary-card-neutral .summary-card-value { color: var(--text-secondary); }
+
+        /* Test suite table */
+        .test-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: calc(var(--font-size, 16px) * 0.65);
+            margin-top: 10px;
+        }
+        .test-table th, .test-table td {
+            padding: 4px 6px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        .test-table th {
+            background: var(--code-bg);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .test-changed { color: #e8825a; font-weight: 600; }
+        .test-control-changed { color: var(--danger); font-weight: 600; }
+
+        /* Evaluation method colors */
+        .method-keyword-flip { color: #6aa893; font-weight: 600; }
+        .method-synonym-flip { color: #5b9bd5; font-weight: 600; }
+        .method-concept-removed { color: #d4a843; }
+        .method-hedging { color: #e8825a; }
+        .method-text-differs { color: var(--text-muted); }
+        .method-no-change { color: var(--text-secondary); }
+
+        .confidence-high { color: #6aa893; }
+        .confidence-mid { color: #d4a843; }
+        .confidence-low { color: var(--text-muted); }
+
+        .test-summary {
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+        .test-summary strong { color: var(--text); }
+
+        #model-select {
+            padding: 4px 8px;
+            font-family: inherit;
+            font-size: inherit;
+            border: 1px solid var(--input-border);
+            border-radius: 3px;
+            background: var(--input-bg);
+            color: var(--text);
+        }
+        .loading { color: var(--text-secondary); font-style: italic; }
+
+        .section-desc {
+            font-size: 0.72em;
+            color: var(--text-secondary);
+            margin: -4px 0 12px 0;
+            line-height: 1.5;
+        }
+        .section-desc em { color: var(--accent); font-style: normal; font-weight: 500; }
+        .status-badge {
+            font-size: 0.65em;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .status-badge-idle { background: var(--code-bg); color: var(--text-muted); }
+        .status-badge-ready { background: rgba(106,168,147,0.15); color: #6aa893; }
+
+        .chat-history {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .chat-entry {
+            margin-bottom: 16px;
+        }
+        .chat-question {
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    {{ theme_toggle_html | safe }}
+    <div class="header">
+        <div class="header-title-row">
+            <h1>concept swap explorer</h1>
+        </div>
+        <div class="header-subtitle">Swap concepts at the activation level in open-weight LLMs on Apple Silicon</div>
+        <div class="model-row">
+            <span>Model:</span>
+            <select id="model-select" onchange="swapModel()">
+                {% for m in model_options %}
+                <option value="{{ m.id }}"{% if m.id == model_name %} selected{% endif %}>{{ m.display }}</option>
+                {% endfor %}
+            </select>
+            <span id="model-info">&mdash; {{ n_layers }} layers</span>
+        </div>
+    </div>
+
+    <!-- Direction Extraction -->
+    <div class="section">
+        <div class="section-title">Concept Direction <span id="direction-status" class="status-badge status-badge-idle">no direction</span></div>
+        <p class="section-desc">Choose two concepts and extract a steering direction from the model's activations. <em>Reflection</em> swaps antonyms (white &harr; black). <em>Translation</em> maps between any two concepts.</p>
+
+        <!-- Mode toggle -->
+        <div class="mode-toggle">
+            <button class="btn btn-active" id="mode-reflection" onclick="setMode('reflection')">Reflection (antonyms)</button>
+            <button class="btn btn-secondary" id="mode-translation" onclick="setMode('translation')">Translation (any concepts)</button>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group" style="flex:1">
+                <label class="input-label">Concept A</label>
+                <input type="text" id="concept-a" value="white" placeholder="e.g. white">
+            </div>
+            <div class="input-group" style="flex:1">
+                <label class="input-label">Concept B</label>
+                <input type="text" id="concept-b" value="black" placeholder="e.g. black">
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary" id="extract-btn" onclick="extractDirection()">Extract Direction</button>
+            <label class="checkbox-group" title="Automatically find the best swap strength via grid search">
+                <input type="checkbox" id="auto-alpha"> Auto Alpha
+            </label>
+            <span id="extract-info" class="info-bar"></span>
+        </div>
+        <div id="layer-results" class="layer-table-wrap" style="display:none"></div>
+    </div>
+
+    <!-- Swap Controls -->
+    <div class="section">
+        <div class="section-title">Swap Controls</div>
+        <p class="section-desc">Alpha controls swap strength (0 = no effect, 3 = maximum). Enable swap to compare normal vs steered outputs.</p>
+        <div class="slider-group">
+            <span class="slider-label">Alpha (strength)</span>
+            <input type="range" id="alpha" min="0" max="3.0" step="0.1" value="1.5" oninput="updateAlpha()">
+            <span class="slider-value" id="alpha-value">1.5</span>
+        </div>
+        <div class="slider-group">
+            <span class="slider-label">Max tokens</span>
+            <input type="range" id="max-tokens" min="10" max="500" step="10" value="200" oninput="document.getElementById('max-tokens-value').textContent=this.value">
+            <span class="slider-value" id="max-tokens-value">200</span>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-secondary" id="swap-toggle" onclick="toggleSwap()" title="Toggle concept swapping for generation">Swap: OFF</button>
+            <button class="btn btn-secondary" onclick="applyChatFormat()" title="Preview the chat template applied to your prompt">Chat Format</button>
+        </div>
+    </div>
+
+    <!-- Chat Interface -->
+    <div class="section">
+        <div class="section-title">Ask a Question</div>
+        <p class="section-desc">Ask anything &mdash; with swap ON, you'll see the model's normal answer alongside its steered answer. Run the test suite for a systematic evaluation.</p>
+        <div class="chat-input-row">
+            <textarea id="chat-input" rows="2" placeholder="Type a question..." onkeydown="if(event.key==='Enter' && !event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
+            <button class="btn btn-primary" id="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-secondary" id="test-suite-btn" onclick="runTestSuite()" title="Run concept + control questions to measure swap quality">Run Test Suite</button>
+            <button class="btn btn-secondary" onclick="clearChat()">Clear</button>
+        </div>
+    </div>
+
+    <!-- Chat Output -->
+    <div class="section" id="output-section" style="display:none">
+        <div class="section-title">Results</div>
+        <div id="chat-history" class="chat-history"></div>
+    </div>
+
+    <!-- Test Suite Results -->
+    <div class="section" id="test-section" style="display:none">
+        <div class="section-title">Test Suite Results</div>
+        <div id="test-dashboard"></div>
+        <div id="test-results"></div>
+    </div>
+
+    <script>
+        {{ theme_js | safe }}
+
+        let directionExtracted = false;
+        let swapEnabled = false;
+        let isComputing = false;
+        let currentMode = 'reflection';
+
+        function setMode(mode) {
+            currentMode = mode;
+            const reflBtn = document.getElementById('mode-reflection');
+            const transBtn = document.getElementById('mode-translation');
+            if (mode === 'reflection') {
+                reflBtn.classList.remove('btn-secondary');
+                reflBtn.classList.add('btn-active');
+                transBtn.classList.remove('btn-active');
+                transBtn.classList.add('btn-secondary');
+            } else {
+                transBtn.classList.remove('btn-secondary');
+                transBtn.classList.add('btn-active');
+                reflBtn.classList.remove('btn-active');
+                reflBtn.classList.add('btn-secondary');
+            }
+        }
+
+        function updateAlpha() {
+            document.getElementById('alpha-value').textContent =
+                document.getElementById('alpha').value;
+        }
+
+        async function swapModel() {
+            const model = document.getElementById('model-select').value;
+            document.getElementById('model-info').textContent = 'loading...';
+
+            const resp = await fetch('/swap_model', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({model})
+            });
+            const data = await resp.json();
+
+            if (data.error) {
+                document.getElementById('model-info').textContent = '— error loading';
+            } else {
+                document.getElementById('model-info').textContent = `— ${data.n_layers} layers`;
+            }
+
+            // Reset state on model swap
+            directionExtracted = false;
+            const badge = document.getElementById('direction-status');
+            badge.textContent = 'no direction';
+            badge.className = 'status-badge status-badge-idle';
+            swapEnabled = false;
+            document.getElementById('swap-toggle').textContent = 'Swap: OFF';
+            document.getElementById('swap-toggle').classList.remove('btn-active');
+            document.getElementById('swap-toggle').classList.add('btn-secondary');
+            document.getElementById('extract-info').textContent = '';
+            document.getElementById('layer-results').style.display = 'none';
+        }
+
+        function toggleSwap() {
+            if (!directionExtracted) {
+                alert('Extract a direction first');
+                return;
+            }
+            swapEnabled = !swapEnabled;
+            const btn = document.getElementById('swap-toggle');
+            if (swapEnabled) {
+                btn.textContent = 'Swap: ON';
+                btn.classList.remove('btn-secondary');
+                btn.classList.add('btn-active');
+            } else {
+                btn.textContent = 'Swap: OFF';
+                btn.classList.remove('btn-active');
+                btn.classList.add('btn-secondary');
+            }
+        }
+
+        async function extractDirection() {
+            if (isComputing) return;
+            isComputing = true;
+
+            const btn = document.getElementById('extract-btn');
+            const autoAlpha = document.getElementById('auto-alpha').checked;
+            btn.textContent = autoAlpha ? 'Extracting + tuning alpha...' : 'Extracting...';
+            btn.disabled = true;
+            document.getElementById('extract-info').innerHTML =
+                '<span class="loading">extracting direction (this may take a minute)...</span>';
+
+            try {
+                const conceptA = document.getElementById('concept-a').value;
+                const conceptB = document.getElementById('concept-b').value;
+
+                const resp = await fetch('/extract_direction', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        concept_a: conceptA,
+                        concept_b: conceptB,
+                        mode: currentMode,
+                        auto_alpha: autoAlpha,
+                    })
+                });
+                const data = await resp.json();
+
+                if (data.error) {
+                    document.getElementById('extract-info').textContent = 'Error: ' + data.error;
+                } else {
+                    directionExtracted = true;
+                    const badge = document.getElementById('direction-status');
+                    badge.textContent = `ready: ${escapeHtml(data.concept_a)} \u2194 ${escapeHtml(data.concept_b)}`;
+                    badge.className = 'status-badge status-badge-ready';
+                    const layers = data.selected_layers.join(', ');
+                    let infoHtml = `<strong>direction extracted</strong> | ` +
+                        `layers: [${layers}] | ` +
+                        `"${escapeHtml(data.concept_a)}" &harr; "${escapeHtml(data.concept_b)}" | ` +
+                        `mode: ${data.mode || currentMode}`;
+
+                    if (data.recommended_alpha !== undefined && autoAlpha) {
+                        infoHtml += ` | <strong>recommended alpha: ${data.recommended_alpha}</strong>`;
+                        // Update slider to recommended alpha
+                        document.getElementById('alpha').value = data.recommended_alpha;
+                        document.getElementById('alpha-value').textContent = data.recommended_alpha;
+                    }
+                    document.getElementById('extract-info').innerHTML = infoHtml;
+
+                    // Show layer results table
+                    if (data.layer_info && data.layer_info.length > 0) {
+                        let html = '<table class="layer-table"><thead><tr>' +
+                            '<th>Layer</th><th>Train Acc</th><th>CV Acc</th>' +
+                            '<th>Nonzero</th><th>Norm</th><th>Selected</th>' +
+                            '</tr></thead><tbody>';
+                        for (const info of data.layer_info) {
+                            const cls = info.selected ? 'layer-selected' : '';
+                            html += `<tr class="${cls}">` +
+                                `<td>${info.layer}</td>` +
+                                `<td>${(info.train_acc * 100).toFixed(0)}%</td>` +
+                                `<td>${(info.cv_acc * 100).toFixed(0)}%</td>` +
+                                `<td>${info.nonzero}/${info.total_features}</td>` +
+                                `<td>${info.norm}</td>` +
+                                `<td>${info.selected ? 'yes' : ''}</td>` +
+                                `</tr>`;
+                        }
+                        html += '</tbody></table>';
+                        document.getElementById('layer-results').innerHTML = html;
+                        document.getElementById('layer-results').style.display = 'block';
+                    }
+                }
+            } catch (e) {
+                document.getElementById('extract-info').textContent = 'Error: ' + e.message;
+            } finally {
+                isComputing = false;
+                btn.textContent = 'Extract Direction';
+                btn.disabled = false;
+            }
+        }
+
+        async function sendMessage() {
+            if (isComputing) return;
+            isComputing = true;
+
+            const btn = document.getElementById('send-btn');
+            btn.textContent = '...';
+            btn.disabled = true;
+
+            const prompt = document.getElementById('chat-input').value.trim();
+            if (!prompt) { isComputing = false; btn.textContent = 'Send'; btn.disabled = false; return; }
+
+            const alpha = parseFloat(document.getElementById('alpha').value);
+            const maxTokens = parseInt(document.getElementById('max-tokens-value').textContent);
+
+            document.getElementById('output-section').style.display = 'block';
+
+            // Add placeholder entry
+            const history = document.getElementById('chat-history');
+            const entry = document.createElement('div');
+            entry.className = 'chat-entry';
+            entry.innerHTML = `<div class="chat-question">&gt; ${escapeHtml(prompt)}</div>` +
+                '<div class="comparison-row">' +
+                '<div class="output-col"><div class="output-label">Normal</div>' +
+                '<div class="output-box output-normal" id="out-normal-' + Date.now() + '"><span class="loading">generating...</span></div></div>' +
+                (swapEnabled ? '<div class="output-col"><div class="output-label">Swapped (alpha=' + alpha + ')</div>' +
+                '<div class="output-box output-swapped" id="out-swapped-' + Date.now() + '"><span class="loading">generating...</span></div></div>' : '') +
+                '</div>';
+            history.prepend(entry);
+
+            const normalBox = entry.querySelector('.output-normal');
+            const swappedBox = entry.querySelector('.output-swapped');
+
+            try {
+                const resp = await fetch('/generate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        prompt: prompt,
+                        alpha: alpha,
+                        swap_enabled: swapEnabled,
+                        max_tokens: maxTokens,
+                    })
+                });
+                const data = await resp.json();
+
+                if (data.error) {
+                    normalBox.textContent = 'Error: ' + data.error;
+                    if (swappedBox) swappedBox.textContent = '';
+                } else {
+                    normalBox.textContent = data.normal;
+                    if (swappedBox && data.swapped !== undefined) {
+                        swappedBox.textContent = data.swapped;
+                    }
+                }
+            } catch (e) {
+                normalBox.textContent = 'Error: ' + e.message;
+            } finally {
+                isComputing = false;
+                btn.textContent = 'Send';
+                btn.disabled = false;
+                document.getElementById('chat-input').value = '';
+            }
+        }
+
+        async function runTestSuite() {
+            if (isComputing) return;
+            if (!directionExtracted) {
+                alert('Extract a direction first');
+                return;
+            }
+            isComputing = true;
+
+            const btn = document.getElementById('test-suite-btn');
+            btn.textContent = 'Running...';
+            btn.disabled = true;
+
+            document.getElementById('test-section').style.display = 'block';
+            document.getElementById('test-dashboard').innerHTML = '';
+            document.getElementById('test-results').innerHTML =
+                '<span class="loading">Running test suite (4 modes: normal, swapped, random, reverse)... this may take several minutes.</span>';
+
+            try {
+                const alpha = parseFloat(document.getElementById('alpha').value);
+                const resp = await fetch('/run_test_suite', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({alpha})
+                });
+                const data = await resp.json();
+
+                if (data.error) {
+                    document.getElementById('test-results').innerHTML =
+                        '<span style="color:var(--danger)">Error: ' + escapeHtml(data.error) + '</span>';
+                } else {
+                    renderTestResults(data);
+                }
+            } catch (e) {
+                document.getElementById('test-results').innerHTML =
+                    '<span style="color:var(--danger)">Error: ' + escapeHtml(e.message) + '</span>';
+            } finally {
+                isComputing = false;
+                btn.textContent = 'Run Test Suite';
+                btn.disabled = false;
+            }
+        }
+
+        function getMethodClass(method) {
+            if (method.startsWith('keyword_flip')) return 'method-keyword-flip';
+            if (method.startsWith('synonym_flip')) return 'method-synonym-flip';
+            if (method === 'concept_removed') return 'method-concept-removed';
+            if (method === 'hedging_detected') return 'method-hedging';
+            if (method === 'text_differs_low_confidence') return 'method-text-differs';
+            return 'method-no-change';
+        }
+
+        function getConfidenceClass(conf) {
+            if (conf >= 0.8) return 'confidence-high';
+            if (conf >= 0.5) return 'confidence-mid';
+            return 'confidence-low';
+        }
+
+        function renderTestResults(data) {
+            const s = data.summary;
+
+            // Render summary dashboard
+            let dashHtml = '<div class="summary-dashboard">';
+
+            // Swap Rate
+            const swapPct = (s.swap_rate * 100).toFixed(0);
+            const swapClass = s.swap_rate >= 0.5 ? 'summary-card-good' : 'summary-card-warn';
+            dashHtml += `<div class="summary-card ${swapClass}">` +
+                `<div class="summary-card-value">${swapPct}%</div>` +
+                `<div class="summary-card-label">Swap Rate</div></div>`;
+
+            // Avg Confidence
+            const confPct = (s.avg_confidence * 100).toFixed(0);
+            dashHtml += `<div class="summary-card summary-card-neutral">` +
+                `<div class="summary-card-value">${confPct}%</div>` +
+                `<div class="summary-card-label">Avg Confidence</div></div>`;
+
+            // Control Preservation
+            const ctrlPct = (s.control_preservation_rate * 100).toFixed(0);
+            const ctrlClass = s.control_preservation_rate >= 0.8 ? 'summary-card-good' : 'summary-card-warn';
+            dashHtml += `<div class="summary-card ${ctrlClass}">` +
+                `<div class="summary-card-value">${ctrlPct}%</div>` +
+                `<div class="summary-card-label">Control Preservation</div></div>`;
+
+            // Perplexity Impact
+            if (s.avg_perplexity_normal != null && s.avg_perplexity_swapped != null) {
+                const pplRatio = (s.avg_perplexity_swapped / s.avg_perplexity_normal).toFixed(2);
+                const pplClass = pplRatio <= 2.0 ? 'summary-card-good' : 'summary-card-warn';
+                dashHtml += `<div class="summary-card ${pplClass}">` +
+                    `<div class="summary-card-value">${pplRatio}x</div>` +
+                    `<div class="summary-card-label">Perplexity Impact</div></div>`;
+            } else {
+                dashHtml += `<div class="summary-card summary-card-neutral">` +
+                    `<div class="summary-card-value">--</div>` +
+                    `<div class="summary-card-label">Perplexity Impact</div></div>`;
+            }
+
+            // Probe Verification
+            if (s.probe_verification_score != null) {
+                const pvPct = (s.probe_verification_score * 100).toFixed(0);
+                const pvClass = s.probe_verification_score >= 0.5 ? 'summary-card-good' : 'summary-card-neutral';
+                dashHtml += `<div class="summary-card ${pvClass}">` +
+                    `<div class="summary-card-value">${pvPct}%</div>` +
+                    `<div class="summary-card-label">Probe Verification</div></div>`;
+            } else {
+                dashHtml += `<div class="summary-card summary-card-neutral">` +
+                    `<div class="summary-card-value">--</div>` +
+                    `<div class="summary-card-label">Probe Verification</div></div>`;
+            }
+
+            // Recommended Alpha
+            dashHtml += `<div class="summary-card summary-card-neutral">` +
+                `<div class="summary-card-value">${s.recommended_alpha}</div>` +
+                `<div class="summary-card-label">Recommended Alpha</div></div>`;
+
+            dashHtml += '</div>';
+            document.getElementById('test-dashboard').innerHTML = dashHtml;
+
+            // Render results table
+            let html = '<table class="test-table"><thead><tr>' +
+                '<th>Question</th><th>Type</th><th>Normal</th><th>Swapped</th>' +
+                '<th>Reverse</th><th>Random</th><th>Confidence</th><th>Method</th>' +
+                '</tr></thead><tbody>';
+
+            for (const row of data.rows) {
+                const changedCls = row.changed
+                    ? (row.type === 'concept' ? 'test-changed' : 'test-control-changed')
+                    : '';
+                const methodCls = getMethodClass(row.method);
+                const confCls = getConfidenceClass(row.confidence);
+
+                html += '<tr>' +
+                    `<td>${escapeHtml(row.question)}</td>` +
+                    `<td>${row.type}</td>` +
+                    `<td>${escapeHtml(row.normal)}</td>` +
+                    `<td class="${changedCls}">${escapeHtml(row.swapped)}` +
+                        `${row.changed && row.type === 'concept' ? ' &#10003;' : ''}` +
+                        `${row.changed && row.type === 'control' ? ' &#9888;' : ''}</td>` +
+                    `<td>${escapeHtml(row.reverse || '')}</td>` +
+                    `<td>${escapeHtml(row.random)}</td>` +
+                    `<td class="${confCls}">${row.confidence}</td>` +
+                    `<td class="${methodCls}">${row.method.replace(/_/g, ' ')}</td>` +
+                    '</tr>';
+            }
+            html += '</tbody></table>';
+
+            // Text summary below table
+            html += '<div class="test-summary">' +
+                `<strong>Concept swapped:</strong> ${s.concept_swapped}/${s.concept_total} | ` +
+                `<strong>Controls affected:</strong> ${s.control_affected}/${s.control_total} (should be 0) | ` +
+                `<strong>Random baseline:</strong> ${s.random_changed}/${s.total_questions} (noise floor) | ` +
+                `<strong>Reverse changed:</strong> ${s.reverse_changed}/${s.total_questions}`;
+
+            if (s.avg_perplexity_normal != null) {
+                html += ` | <strong>PPL normal:</strong> ${s.avg_perplexity_normal}`;
+            }
+            if (s.avg_perplexity_swapped != null) {
+                html += ` | <strong>PPL swapped:</strong> ${s.avg_perplexity_swapped}`;
+            }
+            html += '</div>';
+
+            document.getElementById('test-results').innerHTML = html;
+        }
+
+        function clearChat() {
+            document.getElementById('chat-history').innerHTML = '';
+            document.getElementById('output-section').style.display = 'none';
+            document.getElementById('test-section').style.display = 'none';
+            document.getElementById('test-dashboard').innerHTML = '';
+            document.getElementById('test-results').innerHTML = '';
+        }
+
+        async function applyChatFormat() {
+            const prompt = document.getElementById('chat-input').value;
+            const resp = await fetch('/format_chat', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({prompt})
+            });
+            const data = await resp.json();
+            if (data.formatted) {
+                document.getElementById('chat-input').value = data.formatted;
+            }
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+    </script>
+</body>
+</html>

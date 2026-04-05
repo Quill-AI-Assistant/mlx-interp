@@ -12,3 +12,6 @@ dist/
 build/
 docs/*.bak
 .pytest_cache/
+
+# Run data — local only, reproducible from config.json + git SHA
+runs/*/

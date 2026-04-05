@@ -67,6 +67,7 @@ MODEL_REGISTRY = {
     "qwen2.5": "mlx-community/Qwen2.5-7B-Instruct-4bit",
     "qwen3":   "mlx-community/Qwen3-14B-4bit",
     "gemma3":  "mlx-community/gemma-3-4b-it-4bit",
+    "gemma4":  "unsloth/gemma-4-E4B-it-UD-MLX-4bit",
 }
 
 DEFAULT_MODELS = ["qwen2.5", "qwen3", "gemma3"]

@@ -279,29 +279,49 @@ def extract_color_directions(model, tokenizer, rng):
     return {i: directions[i]["direction"] for i in selected}
 
 
-def apply_swap_layers(model, directions, alpha=1.5):
-    """Monkey-patch layers to swap green/red. Returns dict to restore."""
+def apply_swap_layers(model, directions, alpha=1.5, mode="swap"):
+    """Monkey-patch layers to steer activations. Returns dict to restore.
+
+    Args:
+        mode: "swap" (reflection, original), "add" (additive steering).
+    """
     import mlx.nn as nn
 
     class SwapLayer(nn.Module):
-        def __init__(self, original_layer, direction, alpha):
+        def __init__(self, original_layer, direction, alpha, mode):
             super().__init__()
             self._layer = original_layer
             self._direction = mx.array(direction.tolist())
             self._alpha = alpha
+            self._mode = mode
+            # Copy plain attributes from original layer (e.g. layer_type
+            # for Gemma 4 MoE attention mask routing)
+            for attr in ("layer_type", "is_sliding"):
+                if attr in getattr(original_layer, "__dict__", {}):
+                    self.__dict__[attr] = original_layer.__dict__[attr]
 
         def __call__(self, x, *args, **kwargs):
             out = self._layer(x, *args, **kwargs)
-            out_f = out.astype(mx.float32)
-            proj = mx.sum(out_f * self._direction, axis=-1, keepdims=True)
-            out_modified = out_f - 2.0 * self._alpha * proj * self._direction
-            return out_modified.astype(out.dtype)
+            # Handle tuple returns (e.g. Gemma 4 returns (hidden, ...))
+            if isinstance(out, tuple):
+                h = out[0]
+            else:
+                h = out
+            h_f = h.astype(mx.float32)
+            proj = mx.sum(h_f * self._direction, axis=-1, keepdims=True)
+            if self._mode == "add":
+                h_mod = h_f + self._alpha * self._direction
+            else:  # swap (reflection)
+                h_mod = h_f - 2.0 * self._alpha * proj * self._direction
+            if isinstance(out, tuple):
+                return (h_mod.astype(h.dtype),) + out[1:]
+            return h_mod.astype(out.dtype)
 
     inner = model.model if hasattr(model, "model") else model
     originals = {}
     for idx, direction in directions.items():
         originals[idx] = inner.layers[idx]
-        inner.layers[idx] = SwapLayer(originals[idx], direction, alpha)
+        inner.layers[idx] = SwapLayer(originals[idx], direction, alpha, mode)
     return originals
 
 
@@ -312,7 +332,7 @@ def restore_layers(model, originals):
         inner.layers[idx] = orig
 
 
-def run_color_swap_test(model, tokenizer, rng, n_random_baselines=10):
+def run_color_swap_test(model, tokenizer, rng, n_random_baselines=10, steering_mode="swap"):
     """Run the full color swap test. Returns dict of results."""
     print("\n" + "=" * 70)
     print("  1. COLOR SWAP TEST")
@@ -342,7 +362,7 @@ def run_color_swap_test(model, tokenizer, rng, n_random_baselines=10):
 
     # Swapped
     print("  Running SWAPPED...")
-    originals = apply_swap_layers(model, directions, alpha=1.5)
+    originals = apply_swap_layers(model, directions, alpha=1.5, mode=steering_mode)
     swapped_answers = []
     for i, (q, qtype, expected_color) in enumerate(questions):
         prompt = f"Answer in exactly one word, no explanation. {q}"
@@ -360,7 +380,7 @@ def run_color_swap_test(model, tokenizer, rng, n_random_baselines=10):
         for idx, d in directions.items():
             rand_d = rng.standard_normal(d.shape).astype(np.float32)
             random_dirs[idx] = rand_d / np.linalg.norm(rand_d)
-        originals = apply_swap_layers(model, random_dirs, alpha=1.5)
+        originals = apply_swap_layers(model, random_dirs, alpha=1.5, mode=steering_mode)
         changed = 0
         total = 0
         for i, (q, qtype, expected_color) in enumerate(questions):
@@ -438,6 +458,7 @@ def run_color_swap_test(model, tokenizer, rng, n_random_baselines=10):
         print(f"  FAIL: Swap rate not significantly above random baseline")
 
     return {
+        "steering_mode": steering_mode,
         "n_questions": len(questions),
         "color_swapped": color_swapped,
         "color_total": color_total,
@@ -1075,6 +1096,11 @@ def parse_args():
         help="Skip the contamination analysis"
     )
     parser.add_argument(
+        "--steering-mode", type=str, default="swap",
+        choices=["swap", "add"],
+        help="Steering mode for color swap: 'swap' (reflection) or 'add' (additive) (default: swap)"
+    )
+    parser.add_argument(
         "--n-random-baselines", type=int, default=10,
         help="Number of random direction baselines for color swap (default: 10)"
     )
@@ -1149,7 +1175,8 @@ def main():
                 print(f"\n  [color_swap] Starting for {model_key}...")
                 model_results["color_swap"] = run_color_swap_test(
                     model, tokenizer, rng,
-                    n_random_baselines=args.n_random_baselines
+                    n_random_baselines=args.n_random_baselines,
+                    steering_mode=args.steering_mode
                 )
             except Exception as e:
                 print(f"  [color_swap] FAILED: {e}")
@@ -1194,6 +1221,7 @@ def main():
             "seed": args.seed,
             "models": model_keys,
             "timestamp": timestamp,
+            "steering_mode": args.steering_mode,
             "n_random_baselines": args.n_random_baselines,
             "n_sycophancy_pairs": args.n_sycophancy_pairs,
             "n_bootstrap": args.n_bootstrap,

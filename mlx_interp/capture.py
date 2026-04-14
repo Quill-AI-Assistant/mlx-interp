@@ -104,6 +104,14 @@ def _make_proxy_class(original_cls: type) -> type:
                 )
             return out
 
+        def __getattr__(self, name):
+            # MLX Module.__getattr__ doesn't check __dict__ for plain
+            # Python attributes (e.g. layer_type in Gemma 4).  Fall back
+            # to __dict__ before raising.
+            if name in self.__dict__:
+                return self.__dict__[name]
+            return super().__getattr__(name)
+
     _LayerProxy.__name__ = f"_LayerProxy_{original_cls.__name__}"
     _LayerProxy.__qualname__ = f"_LayerProxy_{original_cls.__qualname__}"
     return _LayerProxy

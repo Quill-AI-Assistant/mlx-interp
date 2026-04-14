@@ -146,7 +146,7 @@ SyA and GA are **more** aligned on Gemma 4 (+0.686) than on Qwen (0.61), not les
 
 The `rigorous_suite.py` v4 code does not include the 3rd-party emotion→pressure classification metric from the original Qwen experiment. The contamination test measures rubric-vs-control cosine similarity, not the emotion→pressure confound. H3 as pre-registered cannot be evaluated from the current runs.
 
-**Partial evidence:** The sycophancy probe achieves 100% accuracy at almost every layer (42/42 layers ≥70%), suggesting the model encodes behavioral pressure signals very strongly — consistent with Google's heavy safety tuning making pressure signals more salient, not less. But this is the sycophancy probe, not the emotion confound probe.
+**Partial evidence:** The sycophancy probe in the rigorous suite achieves high accuracy across all layers, but confound controls (see H5) revealed this is partly format-dependent. The format-controlled SyA-vs-GA comparison reaches 90% at late layers, suggesting real behavioral pressure signals exist but are not as uniformly strong as initially measured.
 
 ### H4: Evaluation Contamination — CONFIRMED (direction correct, magnitude smaller than predicted)
 
@@ -163,42 +163,59 @@ Contamination signal is real (all 5 scenarios significant, no CI touches zero) b
 
 **Runs:** `runs/2026-04-05-0400-rigorous-gemma4-H1-H4-v4/` (swap run, identical contamination results), `runs/2026-04-14-additive-H1-H3-H4/` (additive run, identical — contamination is not steering-dependent)
 
-### H5: Layer Distribution — FALSIFIED (unexpected direction)
+### H5: Layer Distribution — PARTIALLY FALSIFIED (with confound caveat)
 
 | Metric | Qwen2.5-7B | Gemma 4 E4B | Hypothesis |
 |---|---|---|---|
-| Best sycophancy probe layer | 20/28 (0.71) | **0/42 (0.00)** | 17-25/42 (0.40-0.60) |
-| SyA vs GA best layer | 20/28 | **26/42 (0.62)** | proportionally earlier |
-| Layers ≥ 70% accuracy | subset | **42/42 (100%)** | — |
-| Sycophancy probe (all pairwise except SyA-GA) | — | **Layer 1-3**, all 100% | — |
+| Best sycophancy probe layer (rigorous suite) | 20/28 (0.71) | **0/42 (0.00)** | 17-25/42 (0.40-0.60) |
+| SyA vs GA best layer (3-way) | 20/28 | **26/42 (0.62)** | proportionally earlier |
+| Layers ≥ 70% accuracy (rigorous) | subset | **42/42 (100%)** | — |
+| SyA vs GA format-controlled (confound test) | — | **Layer 41, 90%** | — |
 
-The prediction was mid-layers; the result is that sycophancy pressure is detectable from the very first layer with perfect or near-perfect accuracy. 42/42 layers exceed the 70% threshold in the rigorous suite. The signal is not localized — it is uniformly present throughout the entire model depth. The exception is SyA-vs-GA classification, which peaks at layer 26 (relative 0.62), closer to Qwen's pattern.
+**Confound control (2026-04-14):** The rigorous suite's "100% at layer 0" result is **partially format-dependent**. The SyA-vs-Neutral comparison has a surface confound: SyA prompts use tag questions ("right?", "correct?") while Neutral prompts use plain questions ("What is X?"). A confound control test (`confound_control.py`) revealed:
 
-**Verdict:** Falsified — not late layers, not mid layers, but present from layer 0.
+| Test | Layer 0 | Interpretation |
+|---|---|---|
+| Baseline SyA-vs-Neutral CV | 67.5% | Moderate (lower than rigorous suite's 100% — smaller sample) |
+| Transfer to reformatted prompts | **30.0%** | Below chance — probe does not transfer across formats |
+| False SyA rate on Neutral-with-tags | **55.0%** | Tags push neutral toward "sycophantic" classification |
+| Content-only SyA-vs-GA (no tags, same format) | **65.0%** | Real content signal exists but is weak at layer 0 |
+
+The true content signal (wrong-vs-right claims with identical format) peaks at **layer 41 (90% accuracy)**, not layer 0. The 3-way experiment's SyA-vs-GA comparison (format-matched, both use tag questions) confirms this: best layer is 26 (90% accuracy), consistent with late-layer behavioral processing.
+
+**Verdict:** The rigorous suite's "layer 0, 100%" result was inflated by prompt format confounds. The format-controlled SyA-vs-GA separation peaks at layers 26-41, broadly consistent with the predicted range (17-25) but shifted later. H5 is partially falsified: the signal is later than predicted (layers 26-41 vs 17-25), not earlier.
+
+**Run:** `experiments/results/confound-control-20260414-223738.json`
 
 ## Analysis
 
-### The Interpretability-Actionability Gap Is Architectural
+### Linear Steering Fails on MoE — Both Methods
 
-The central finding: **detection is trivially perfect, steering produces nothing.**
+The headline result: **both additive and reflection steering produce nothing on Gemma 4.**
 
-- Sycophancy probe: 100% accuracy at layer 0 on Gemma 4 (vs 86.7% at layer 20 on Qwen). Detection is easier, not harder, on MoE.
 - Color swap: 4.5% with additive steering, 3.6% with reflection (vs 91.1% on Qwen). Both indistinguishable from random baseline.
 - Causal steering: alpha=-3.0 produces token repetition and language switching, not selective behavioral suppression.
 
-This confirms the interpretability-actionability gap is not a tooling artifact or a Qwen-specific phenomenon. MoE architectures route concepts through different experts — linear probes can detect behavioral patterns because they project across all expert outputs, but additive/reflective steering along a single direction cannot reach the distributed representation.
+This failure is consistent with existing work: SteerMoE (Fayyaz et al., Sep 2025) pivots to expert (de)activation for MoE models; Yap (Mar 2026) shows SAE-decoded probe vectors can work on MoE where raw additive steering fails. Our contribution is a controlled negative result confirming the failure with matched prompts and two steering methods.
 
-### The Published Paper's Orthogonality Claim Does Not Replicate
+Note: the detection-vs-steering gap (Basu et al., Mar 2026, "Interpretability without actionability") is an established concept. Our data adds an architecture-specific data point (MoE) but does not discover the gap.
 
-SyA-GA cosine is +0.686 on Gemma 4 (vs +0.61 on Qwen). The "Sycophancy Is Not One Thing" paper claims these directions are orthogonal. We now have two model families (Qwen, Gemma) showing substantial alignment. The disagreement likely stems from methodology differences (mean-difference directions vs the paper's approach) rather than model-specific effects.
+### The Published Paper's Orthogonality Claim — Nuanced
 
-### MoE Scatters Activation Signals
+SyA-GA cosine is +0.686 on Gemma 4 (vs +0.61 on Qwen). Vennemeyer et al. ("Sycophancy Is Not One Thing", Sep 2025) report SyA-GA starting collinear (~0.99) at early layers, diverging in mid-layers (<0.2), then partially realigning (~0.6) in late layers. Our +0.686 mean across layers 21-41 is consistent with their late-layer realignment finding rather than contradicting it. The disagreement, if any, is in the mid-layer divergence pattern — we see alignment throughout, they see a dip. This may reflect methodology differences (mean-difference directions vs their extraction method) or MoE-specific effects.
 
-Two findings point to MoE's effect on activation-level information:
-1. Contamination R-C diff is 8x smaller (+0.042 vs +0.35) — rubric context is encoded more diffusely.
-2. Sycophancy signal is uniform across all 42 layers (vs concentrated at layer 20 on Qwen) — MoE doesn't localize behavioral information.
+### MoE Scatters Contamination Signals
 
-Both are consistent with MoE distributing information across experts rather than concentrating it in specific layers or directions.
+Contamination R-C diff is 8x smaller (+0.042 vs +0.35). This is the cleanest MoE-specific finding: rubric context is encoded more diffusely on MoE, consistent with expert routing distributing information rather than concentrating it in specific directions.
+
+### Format Confounds in Sycophancy Probes
+
+The confound control revealed that the rigorous suite's "100% detection at layer 0" was partially artifactual. SyA prompts use tag questions ("right?") while Neutral prompts use plain questions. A format-controlled test showed:
+- The probe does not transfer across formats (30% at layer 0, below chance)
+- Neutral-with-tags gets classified as sycophantic 55% of the time
+- The real content signal (wrong-vs-right claims, matched format) peaks at layer 41 (90%)
+
+This underscores the format-sensitivity critique (Devbunova, Mar 2026) applied to sycophancy probes. Future work should use format-matched prompts across all conditions.
 
 ## Limitations
 
@@ -212,7 +229,9 @@ Both are consistent with MoE distributing information across experts rather than
 
 5. **Model size confound:** Gemma 4 has 4B active params vs Qwen's 7B. The steering failure could partly be a capacity effect rather than purely architectural. Testing on a dense 4B model would disambiguate.
 
-6. **Steering method scope:** Only additive and reflection steering were tested. Other approaches (activation patching, SAE-based steering, DPO-style fine-tuning) might work where linear steering fails on MoE.
+6. **Steering method scope:** Only additive and reflection steering were tested. Yap (Mar 2026) shows SAE-decoded probe vectors succeed on MoE (Qwen 3.5-35B-A3B). Activation patching, SAE-based steering, or expert (de)activation (SteerMoE, Sep 2025) might work where linear steering fails.
+
+7. **Prompt format confounds:** The rigorous suite's sycophancy probe has a format confound (tag questions in SyA/GA, none in Neutral). The confound control test confirmed partial format dependence at early layers. Future replications should use format-matched prompts across all conditions. See Devbunova (Mar 2026, arxiv 2603.19426) for the analogous critique on eval awareness probes.
 
 ## Related
 - [[wiki/experiments/mlx-interpretability]]

@@ -1,3 +1,6 @@
+---
+tags: [workbench, research]
+---
 # mlx-interp
 
 Activation capture, linear probes, and concept steering for MLX language models on Apple Silicon.
@@ -112,3 +115,6 @@ pip install -r requirements.txt
 ## License
 
 MIT
+
+## Related
+- [[wiki/experiments/mlx-interpretability]]

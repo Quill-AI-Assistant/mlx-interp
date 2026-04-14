@@ -187,7 +187,8 @@ def extract_activations(model, tokenizer, monitor, prompts, label, seed=42):
             tokens = mx.array(tokenizer.encode(token_ids))
 
         monitor.clear()
-        out = model.model(tokens[None])
+        inner = model.model if hasattr(model, "model") else model
+        out = inner(tokens[None])
         mx.eval(out)
 
         # Get last-token activation from each layer
@@ -471,7 +472,8 @@ def main():
 
         # Apply steering
         if steer_dir is not None and alpha != 0.0:
-            layer_module = model.model.layers[steer_layer]
+            inner_m = model.model if hasattr(model, "model") else model
+            layer_module = inner_m.layers[steer_layer]
             original_call = layer_module.__class__.__call__
             steer_d = steer_dir
             steer_a = alpha

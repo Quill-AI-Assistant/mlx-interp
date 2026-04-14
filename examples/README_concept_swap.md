@@ -1,3 +1,6 @@
+---
+tags: [workbench, research]
+---
 # Concept Swap Vignette
 
 An educational demonstration of activation steering using Householder reflections. This vignette applies established techniques from the interpretability literature to swap concept pairs in small language models — no retraining or fine-tuning required.
@@ -114,3 +117,6 @@ curl -X POST http://localhost:5006/generate \
   -H "Content-Type: application/json" \
   -d '{"prompt": "What color is the sky?", "alpha": 1.5, "swap_enabled": true, "max_tokens": 5}'
 ```
+
+## Related
+- [[wiki/experiments/mlx-interpretability]]

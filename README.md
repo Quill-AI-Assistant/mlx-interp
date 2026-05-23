@@ -93,6 +93,15 @@ python3 sycophancy_3way.py --n-prompts 30 --seed 42
 | Interactive chat | `chat.py` | Chat with optional steering |
 | Sycophancy diagnostic | `sycophancy_proper.py` | 6-condition confound analysis |
 
+## Vignettes
+
+Self-contained, runnable demonstrations in `examples/` — each ships a script, a results JSON, and a README with verified findings.
+
+| Vignette | Script | README | What it explores |
+|---|---|---|---|
+| Concept swap | `examples/concept_swap_vignette.py` | [README](examples/README_concept_swap.md) | Bidirectional concept swap via Householder reflection on activation directions |
+| Recursive refeed | `examples/recursive_refeed_vignette.py` | [README](examples/README_recursive_refeed.md) | Inference-time looped transformer on frozen models (CoCoNuT / Huginn / Inner Loop Inference family); includes random-injection control |
+
 ## Requirements
 
 - Apple Silicon Mac (M1/M2/M3/M4)

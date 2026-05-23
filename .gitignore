@@ -15,3 +15,6 @@ docs/*.bak
 
 # Run data — local only, reproducible from config.json + git SHA
 runs/*/
+
+# local hub metadata (local wikilinks, local-only context)
+_index.md
